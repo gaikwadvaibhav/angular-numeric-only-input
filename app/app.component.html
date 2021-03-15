@@ -1,0 +1,73 @@
+<p>
+  Angular directive to accepts numbers and decimal with min-max/range validation
+  :)
+</p>
+<h3><code>digitOnly</code> directive</h3>
+<br />
+<form [formGroup]="myForm">
+  <label for="digit-only-with-max-length">
+    Digit Only input box with max length 1
+  </label>
+  <input
+    id="numbersOnly"
+    formControlName="mood"
+    type="text"
+    digitOnly
+    placeholder="0"
+    maxlength="1"
+    min="1"
+    max="5"
+  />
+  <br />
+  <br />
+  <label for="digit-only-min-max">
+    Digit Only input box between 0 and 10
+  </label>
+  <input
+    id="digit-only-min-max"
+    type="text"
+    formControlName="weight"
+    digitOnly
+    placeholder="Between 0 and 10"
+    min="0"
+    max="10"
+    maxlength="2"
+  />
+  <br />
+  <br />
+
+  <label for="temperature">
+    temperature: Digit Only input only allows 3 digits before and 1 after
+    decimal places
+  </label>
+  <br />
+  <br />
+  <input
+    id="temperature"
+    type="text"
+    name="temperature"
+    digitOnly
+    inputmode="numeric"
+    pattern="^\d{1,3}(?:[.]\d{1})?$"
+    placeholder="000.0"
+    decimal="true"
+  />
+  <br />
+  <br />
+  <label for="weight">
+    weight: Digit Only input only allows 2 digits before and 1 after decimal
+    places
+  </label>
+  <br />
+  <br />
+  <input
+    id="weight"
+    type="text"
+    name="weight"
+    digitOnly
+    inputmode="numeric"
+    pattern="^\d{1,2}(?:[.]\d{1})?$"
+    placeholder="00.0"
+    decimal="true"
+  />
+</form>
